@@ -26,7 +26,15 @@ public class EmpService {
         return EmployeeDto.fromEntity(savedEmployee);
 
     }
-
+ public EmployeeDto updateEmployee(Integer id, EmployeeDto employeeDto) {
+        Employee existingEmployee = empRepo.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Employee not found with ID: " + id));
+        existingEmployee.setFname(employeeDto.getFname());
+        existingEmployee.setLname(employeeDto.getLname());
+        existingEmployee.setSalary(employeeDto.getSalary());
+        Employee updatedEmployee = empRepo.save(existingEmployee);
+        return EmployeeDto.fromEntity(updatedEmployee);
+    }
     public void deleteEmployee(Integer id) {
         if (!empRepo.existsById(id)) {
             throw new ResourceNotFoundException("Employee not found with ID: " + id);
