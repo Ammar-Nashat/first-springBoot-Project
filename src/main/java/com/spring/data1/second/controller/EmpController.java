@@ -26,7 +26,7 @@ public class EmpController {
             @PathVariable Integer id,
             @RequestBody EmployeeDto employeeDto) {
         EmployeeDto updatedEmployee = empService.updateEmployee(id, employeeDto);
-        return ResponseEntity.ok(updatedEmployee); // HTTP 200 OK
+        return ResponseEntity.ok(updatedEmployee); 
     }
     @DeleteMapping("/{id}")
     public void deleteEmployee(@PathVariable int id) {
