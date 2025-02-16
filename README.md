@@ -1,4 +1,4 @@
-# Employee Management System - First Spring Boot Project
+# - First Spring Boot Project
 
 A Spring Boot application for managing employee data. This project demonstrates CRUD operations (Create, Read, Update, Delete) using RESTful APIs.
 
